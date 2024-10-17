@@ -9,4 +9,4 @@ If you on Linux then go to `v8.sh` and replace `gtime` with `/usr/bin/time`
 
 ### How to use
 
-Run `sh v8.sh file.js` to execute file.js with V8 engine using flags listed in _v8.sh_. This will generate a bytecode for each function that prefixed with _bc__*_. Natives syntax allowed.
+Run `sh v8.sh file.js` to execute file.js with V8 engine using flags listed in _v8.sh_. This will generate a bytecode for each function that prefixed with bc__*. Natives syntax allowed.
