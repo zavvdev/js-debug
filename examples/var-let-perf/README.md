@@ -48,7 +48,7 @@ You can see that error has occured even:
 
 This is because _Static Semantics_ stage which analyzes all your code even if it will never be executed. So just using **var** in this case you omit those kind of checks.
 
-## Bytecode overview 
+## Bytecode overview
 
 We saw what it means _Static Semantics_ for **let/const** code. What about _Runtime Semantics_?
 
@@ -60,13 +60,13 @@ We can see that in case of bytecode for **const** case there is one more instruc
 
 And now let's move our global **AGE** inside the function. See `../identifiers/const_local.js` and `../identifiers/var_local.js`. And the bytecode for these files: `../identifiers/debug__const_local.txt` and `../identifiers/debug__var_local.txt`. In this case bytecode is literally identical since we didn't violate **let/const** semantic rules.
 
-So now we've seen what cost **let/const** brings. There is literrally one additional operation per identifier for interpreter during runtime code evaluation. 
+So now we've seen what cost **let/const** brings. There is literrally one additional operation per identifier for interpreter during runtime code evaluation.
 
 ## Performance comparison
 
-Take a look at `./var_perf.js` and `./let_perf.js` files. I've used here more complex example with expensive loop operation to simulate some long time consuming task. In both cases **i_1**, **i_2**, **i_3** and **s** identifiers are declared outside of the **bc__test** function which is pretty much replicate the common use case when you define some global identifiers using **const**.
+Take a look at `./var_perf.js` and `./let_perf.js` files. I've used here more complex example with expensive loop operation to simulate some long time consuming task. In both cases **i_1**, **i_2**, **i_3** and **s** identifiers are declared outside of the **bc\_\_test** function which is pretty much replicate the common use case when you define some global identifiers using **const**.
 
-To be fair with our tests I disabled optimizations for **bc__main** and **bc__test** functions with `% NeverOptimizeFunction` function. This function is part of [V8's native syntax](https://github.com/v8/v8/blob/941b945b/src/runtime/runtime.h). 
+To be fair with our tests I disabled optimizations for **bc\_\_main** and **bc\_\_test** functions with `% NeverOptimizeFunction` function. This function is part of [V8's native syntax](https://github.com/v8/v8/blob/941b945b/src/runtime/runtime.h).
 
 Few words about optimizations: during code execution V8 collects statistics about your code and if it decides that some function can be optimized - it will generage fast machine code for it. You can sometimes predict when function will be optimized if you knowledgeable enough with V8's TurboFan or Maglev work specifics, but for everyday use case scenario you don't write code for optimizer specifically, so more likely your code won't be optimized in 70-80% of chances.
 
@@ -83,3 +83,13 @@ So as we can see, there is ~20% of time were taken by those additional runtime s
 You can say that it's not significant, but think about it again that even in this simple test **let** was slower by ~20% against **var** in the scenario that is very similar to the real world one where you have different variables all around the project. And imagine that amount of code that you write every day and what would've happened if you just replace _some_ consts with var?
 
 Is this a reason to not use _let_ or _const_? - No. Just do not think of _var_ as it's deprecated, old or some legacy feature. As we saw, _var_ is a pefect solution if you want to boost your runtime speed, so you need to consider when to use which one.
+
+## Links
+
+[TypeScript. Using var in limited contexts to avoid runtime TDZ checks](https://github.com/microsoft/TypeScript/issues/52924)
+
+[TypeScript. Switch let/const to var in the scanner & parser for top-levelish variables](https://github.com/microsoft/TypeScript/pull/52832)
+
+[Ignition TDZ check elision](https://docs.google.com/document/d/1klT7-tQpxtYbwhssRDKfUMEgm-NS3iUeMuApuRgZnAw/edit?tab=t.0#heading=h.n1atlriavj6v)
+
+[Chromium. Let/const are 10% slower than var](https://issues.chromium.org/issues/42203665)
