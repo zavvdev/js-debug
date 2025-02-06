@@ -1,0 +1,434 @@
+[manually marking 0x1d1600288f69 <JSFunction mc__PORT <./examples/fn-inlining/lambda.js> (sfi = 0x1d1600099281)> for optimization to TURBOFAN_JS, ConcurrencyMode::kSynchronous]
+[compiling method 0x1d1600288f69 <JSFunction mc__PORT <./examples/fn-inlining/lambda.js> (sfi = 0x1d1600099281)> (target TURBOFAN_JS), mode: ConcurrencyMode::kSynchronous]
+--- FUNCTION SOURCE (./examples/fn-inlining/lambda.js:mc__PORT) id{0,-1} start{15} ---
+() => "3000"
+--- END ---
+--- Raw source ---
+() => "3000";
+
+--- Optimized code ---
+optimization_id = 0
+source_position = 15
+kind = TURBOFAN_JS
+name = mc__PORT
+stack_slots = 6
+compiler = turbofan
+address = 0x71600040255
+
+Instructions (size = 316)
+[34m                  [ Frame: MANUAL[;m
+[34m                  -- Prologue: check code start register -- - AssembleCode@../../src/compiler/backend/code-generator.cc:232[;m
+0x16d340020     0  10000010       adr x16, #+0x0 (addr 0x16d340020)
+0x16d340024     4  eb02021f       cmp x16, x2
+0x16d340028     8  54000080       b.eq #+0x10 (addr 0x16d340038)
+[34m                    [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  Wrong value in code start register passed - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+0x16d34002c     c  d2801081       movz x1, #0x84
+[34m                      [ Frame: NO_FRAME_TYPE[;m
+[34m                        [  - EntryFromBuiltinAsOperand@../../src/codegen/arm64/macro-assembler-arm64.cc:2397[;m
+[34m                        ][;m
+0x16d340030    10  f96b2b50       ldr x16, [x26, #22096]
+0x16d340034    14  d63f0200       blr x16
+[34m                      ][;m
+[34m                    ][;m
+[34m                  -- Prologue: check for deoptimization -- - AssembleCode@../../src/compiler/backend/code-generator.cc:255[;m
+[34m                    [  - DecompressProtected@../../src/codegen/arm64/macro-assembler-arm64.cc:3665[;m
+0x16d340038    18  b85f4050       ldur w16, [x2, #-12]
+0x16d34003c    1c  f940b351       ldr x17, [x26, #352]
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d340040    20  aa110210       orr x16, x16, x17
+[34m                      ][;m
+[34m                    ][;m
+0x16d340044    24  b8417210       ldur w16, [x16, #23]
+0x16d340048    28  36e80050       tbz w16, #29, #+0x8 (addr 0x16d340050)
+[34m                    [ Inlined  Trampoline for tail call to CompileLazyDeoptimizedCode - TailCallBuiltin@../../src/codegen/arm64/macro-assembler-arm64.cc:2450[;m
+0x16d34004c    2c  15e0cce5       b #+0x7833394 (addr 0x174b733e0)    ;; near builtin entry
+[34m                    ][;m
+[34m                  -- B0 start (construct frame) --[;m
+[34m                    [  - AssertSpAligned@../../src/codegen/arm64/macro-assembler-arm64.cc:1610[;m
+0x16d340050    30  910003f0       mov x16, sp
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d340054    34  f2400e1f       tst x16, #0xf
+[34m                      ][;m
+0x16d340058    38  540000c0       b.eq #+0x18 (addr 0x16d340070)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  The stack pointer is not the expected value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+0x16d34005c    3c  52800780       movz w0, #0x3c
+0x16d340060    40  d29f4990       movz x16, #0xfa4c
+0x16d340064    44  f2a16270       movk x16, #0xb13, lsl #16
+0x16d340068    48  f2c00030       movk x16, #0x1, lsl #32
+0x16d34006c    4c  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+[34m                    [  - Prologue@../../src/codegen/arm64/macro-assembler-arm64.cc:3134[;m
+0x16d340070    50  a9bf7bfd       stp fp, lr, [sp, #-16]!
+0x16d340074    54  910003fd       mov fp, sp
+0x16d340078    58  a9be03ff       stp xzr, x0, [sp, #-32]!
+0x16d34007c    5c  a9016fe1       stp x1, cp, [sp, #16]
+[34m                    ][;m
+[34m                  -- <not inlined:15> --[;m
+0x16d340080    60  f8520342       ldur x2, [x26, #-224]
+0x16d340084    64  eb2263ff       cmp sp, x2
+0x16d340088    68  540002a9       b.ls #+0x54 (addr 0x16d3400dc)
+[34m                  -- B2 start (deconstruct frame) --[;m
+[34m                  -- <not inlined:27> --[;m
+0x16d34008c    6c  580005a0       ldr x0, pc+180 (addr 0x000000016d340140)    ;; object: 0x1d1600099151 <String[4]: #3000>
+0x16d340090    70  f85e83a3       ldur x3, [fp, #-24]
+0x16d340094    74  910003bf       mov sp, fp
+0x16d340098    78  a8c17bfd       ldp fp, lr, [sp], #16
+0x16d34009c    7c  91000470       add x16, x3, #0x1 (1)
+[34m                    [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d3400a0    80  927ffa10       and x16, x16, #0xfffffffffffffffe
+[34m                    ][;m
+[34m                    [  - AssertPositiveOrZero@../../src/codegen/arm64/macro-assembler-arm64.cc:1798[;m
+0x16d3400a4    84  b6f80090       tbz x16, #63, #+0x10 (addr 0x16d3400b4)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  Unexpected negative value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+0x16d3400a8    88  d2800e01       movz x1, #0x70
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+[34m                          [  - EntryFromBuiltinAsOperand@../../src/codegen/arm64/macro-assembler-arm64.cc:2397[;m
+[34m                          ][;m
+0x16d3400ac    8c  f96b2b50       ldr x16, [x26, #22096]
+0x16d3400b0    90  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+0x16d3400b4    94  8b306fff       add sp, sp, x16, lsl #3
+[34m                    [  - AssertSpAligned@../../src/codegen/arm64/macro-assembler-arm64.cc:1610[;m
+0x16d3400b8    98  910003f0       mov x16, sp
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d3400bc    9c  f2400e1f       tst x16, #0xf
+[34m                      ][;m
+0x16d3400c0    a0  540000c0       b.eq #+0x18 (addr 0x16d3400d8)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  The stack pointer is not the expected value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+0x16d3400c4    a4  52800780       movz w0, #0x3c
+0x16d3400c8    a8  d29f4990       movz x16, #0xfa4c
+0x16d3400cc    ac  f2a16270       movk x16, #0xb13, lsl #16
+0x16d3400d0    b0  f2c00030       movk x16, #0x1, lsl #32
+0x16d3400d4    b4  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+0x16d3400d8    b8  d65f03c0       ret
+[34m                  -- B1 start (deferred) (deconstruct frame) --[;m
+[34m                  -- <not inlined:15> --[;m
+0x16d3400dc    bc  d2800a02       movz x2, #0x50
+[34m                    [  - AssertSpAligned@../../src/codegen/arm64/macro-assembler-arm64.cc:1610[;m
+0x16d3400e0    c0  910003f0       mov x16, sp
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d3400e4    c4  f2400e1f       tst x16, #0xf
+[34m                      ][;m
+0x16d3400e8    c8  540000c0       b.eq #+0x18 (addr 0x16d340100)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  The stack pointer is not the expected value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+0x16d3400ec    cc  52800780       movz w0, #0x3c
+0x16d3400f0    d0  d29f4990       movz x16, #0xfa4c
+0x16d3400f4    d4  f2a16270       movk x16, #0xb13, lsl #16
+0x16d3400f8    d8  f2c00030       movk x16, #0x1, lsl #32
+0x16d3400fc    dc  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+0x16d340100    e0  d10043ff       sub sp, sp, #0x10 (16)
+0x16d340104    e4  f90007ff       str xzr, [sp, #8]
+0x16d340108    e8  f90003e2       str x2, [sp]
+0x16d34010c    ec  f9000bfb       str cp, [sp, #16]
+0x16d340110    f0  d2946e01       movz x1, #0xa370
+0x16d340114    f4  f2a17e81       movk x1, #0xbf4, lsl #16
+0x16d340118    f8  f2c00021       movk x1, #0x1, lsl #32
+0x16d34011c    fc  d2800020       movz x0, #0x1
+0x16d340120   100  58000142       ldr x2, pc+40 (addr 0x000000016d340148)    ;; object: 0x1d1600081a85 <NativeContext[301]>
+0x16d340124   104  aa0203fb       mov cp, x2
+[34m                    [ Inlined  Trampoline for call to CEntry_Return1_ArgvOnStack_NoBuiltinExit - CallBuiltin@../../src/codegen/arm64/macro-assembler-arm64.cc:2411[;m
+0x16d340128   108  95eb18be       bl #+0x7ac62f8 (addr 0x174e06420)    ;; near builtin entry
+[34m                    ][;m
+[34m                  -- <not inlined:27> --[;m
+0x16d34012c   10c  580000a0       ldr x0, pc+20 (addr 0x000000016d340140)    ;; object: 0x1d1600099151 <String[4]: #3000>
+0x16d340130   110  17ffffd8       b #-0xa0 (addr 0x16d340090)
+0x16d340134   114  d503201f       nop
+[34m                  [ Constant Pool - EmitAndClear@../../src/codegen/constant-pool.cc:292[;m
+0x16d340138   118  580000bf       constant pool begin (num_const = 5)    ;; constant pool
+0x16d34013c   11c  d63f03e0       constant
+0x16d340140   120  00099151       constant
+0x16d340144   124  00001d16       constant
+0x16d340148   128  00081a85       constant
+0x16d34014c   12c  00001d16       constant
+[34m                  ] - EmitAndClear@../../src/codegen/constant-pool.cc:296[;m
+[34m                    [  - EntryFromBuiltinAsOperand@../../src/codegen/arm64/macro-assembler-arm64.cc:2397[;m
+[34m                    ][;m
+0x16d340150   130  f8558350       ldur x16, [x26, #-168]
+0x16d340154   134  d61f0200       br x16
+[34m                    [  - CallForDeoptimization@../../src/codegen/arm64/macro-assembler-arm64.cc:2673[;m
+0x16d340158   138  97fffffe       bl #-0x8 (addr 0x16d340150)    ;; debug: deopt position, script offset 'f'
+                                                             ;; debug: deopt position, inlining id 'ffffffff'
+                                                             ;; debug: deopt reason '(unknown)'
+                                                             ;; debug: deopt index 0
+                                                             ;; debug: deopt node id 11
+                    ]
+                  ;;; Safepoint table. - Emit@../../src/codegen/safepoint-table.cc:187
+                  ]
+
+Source positions:
+ pc offset  position
+        60        15
+        6c        27
+        bc        15
+       10c        27
+
+Inlined functions (count = 0)
+
+Deoptimization Input Data (deopt points = 1)
+ index  bytecode-offset  node-id    pc
+     0               -1       17   10c 
+
+Safepoints (entries = 1, byte size = 14)
+0x16d34012c    10c  slots (sp->fp): 10000000  deopt      0 trampoline:    138
+
+RelocInfo (size = 2b)
+0x16d34004c  near builtin entry
+0x16d34008c  full embedded object  (0x1d1600099151 <String[4]: #3000>)
+0x16d340120  full embedded object  (0x1d1600081a85 <NativeContext[12d]>)
+0x16d340128  near builtin entry
+0x16d340138  constant pool (size 18)
+0x16d340158  deopt script offset  (f)
+0x16d340158  deopt inlining id  (ffffffffffffffff)
+0x16d340158  deopt reason  ((unknown))
+0x16d340158  deopt index
+0x16d340158  deopt node id
+
+--- End code ---
+[completed compiling 0x1d1600288f69 <JSFunction mc__PORT <./examples/fn-inlining/lambda.js> (sfi = 0x1d1600099281)> (target TURBOFAN_JS) - took 0.041, 0.917, 0.792 ms]
+[turbofan] Compiled: 1 functions with 12 byte source size in 1.750000ms.
+[manually marking 0x1d1600099335 <JSFunction mc__main <./examples/fn-inlining/lambda.js> (sfi = 0x1d1600099251)> for optimization to TURBOFAN_JS, ConcurrencyMode::kSynchronous]
+[compiling method 0x1d1600099335 <JSFunction mc__main <./examples/fn-inlining/lambda.js> (sfi = 0x1d1600099251)> (target TURBOFAN_JS), mode: ConcurrencyMode::kSynchronous]
+--- FUNCTION SOURCE (./examples/fn-inlining/lambda.js:mc__main) id{1,-1} start{144} ---
+() {
+  var data = "port is: " + mc__PORT();
+  return data;
+}
+--- END ---
+--- FUNCTION SOURCE (./examples/fn-inlining/lambda.js:mc__PORT) id{1,0} start{15} ---
+() => "3000"
+--- END ---
+INLINE (mc__PORT) id{1,0} AS 0 AT <-1:176>
+--- Raw source ---
+() {
+  var data = "port is: " + mc__PORT();
+  return data;
+}
+
+
+--- Optimized code ---
+optimization_id = 1
+source_position = 144
+kind = TURBOFAN_JS
+name = mc__main
+stack_slots = 6
+compiler = turbofan
+address = 0x71600040375
+
+Instructions (size = 316)
+[34m                  [ Frame: MANUAL[;m
+[34m                  -- Prologue: check code start register -- - AssembleCode@../../src/compiler/backend/code-generator.cc:232[;m
+0x16d341240     0  10000010       adr x16, #+0x0 (addr 0x16d341240)
+0x16d341244     4  eb02021f       cmp x16, x2
+0x16d341248     8  54000080       b.eq #+0x10 (addr 0x16d341258)
+[34m                    [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  Wrong value in code start register passed - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+0x16d34124c     c  d2801081       movz x1, #0x84
+[34m                      [ Frame: NO_FRAME_TYPE[;m
+[34m                        [  - EntryFromBuiltinAsOperand@../../src/codegen/arm64/macro-assembler-arm64.cc:2397[;m
+[34m                        ][;m
+0x16d341250    10  f96b2b50       ldr x16, [x26, #22096]
+0x16d341254    14  d63f0200       blr x16
+[34m                      ][;m
+[34m                    ][;m
+[34m                  -- Prologue: check for deoptimization -- - AssembleCode@../../src/compiler/backend/code-generator.cc:255[;m
+[34m                    [  - DecompressProtected@../../src/codegen/arm64/macro-assembler-arm64.cc:3665[;m
+0x16d341258    18  b85f4050       ldur w16, [x2, #-12]
+0x16d34125c    1c  f940b351       ldr x17, [x26, #352]
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d341260    20  aa110210       orr x16, x16, x17
+[34m                      ][;m
+[34m                    ][;m
+0x16d341264    24  b8417210       ldur w16, [x16, #23]
+0x16d341268    28  36e80050       tbz w16, #29, #+0x8 (addr 0x16d341270)
+[34m                    [ Inlined  Trampoline for tail call to CompileLazyDeoptimizedCode - TailCallBuiltin@../../src/codegen/arm64/macro-assembler-arm64.cc:2450[;m
+0x16d34126c    2c  15e0c85d       b #+0x7832174 (addr 0x174b733e0)    ;; near builtin entry
+[34m                    ][;m
+[34m                  -- B0 start (construct frame) --[;m
+[34m                    [  - AssertSpAligned@../../src/codegen/arm64/macro-assembler-arm64.cc:1610[;m
+0x16d341270    30  910003f0       mov x16, sp
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d341274    34  f2400e1f       tst x16, #0xf
+[34m                      ][;m
+0x16d341278    38  540000c0       b.eq #+0x18 (addr 0x16d341290)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  The stack pointer is not the expected value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+0x16d34127c    3c  52800780       movz w0, #0x3c
+0x16d341280    40  d29f4990       movz x16, #0xfa4c
+0x16d341284    44  f2a16270       movk x16, #0xb13, lsl #16
+0x16d341288    48  f2c00030       movk x16, #0x1, lsl #32
+0x16d34128c    4c  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+[34m                    [  - Prologue@../../src/codegen/arm64/macro-assembler-arm64.cc:3134[;m
+0x16d341290    50  a9bf7bfd       stp fp, lr, [sp, #-16]!
+0x16d341294    54  910003fd       mov fp, sp
+0x16d341298    58  a9be03ff       stp xzr, x0, [sp, #-32]!
+0x16d34129c    5c  a9016fe1       stp x1, cp, [sp, #16]
+[34m                    ][;m
+[34m                  -- <not inlined:144> --[;m
+0x16d3412a0    60  f8520342       ldur x2, [x26, #-224]
+0x16d3412a4    64  eb2263ff       cmp sp, x2
+0x16d3412a8    68  540002a9       b.ls #+0x54 (addr 0x16d3412fc)
+[34m                  -- B2 start (deconstruct frame) --[;m
+[34m                  -- <not inlined:202> --[;m
+0x16d3412ac    6c  580005a0       ldr x0, pc+180 (addr 0x000000016d341360)    ;; object: 0x1d1600099475 <String[13]: "port is: 3000">
+0x16d3412b0    70  f85e83a3       ldur x3, [fp, #-24]
+0x16d3412b4    74  910003bf       mov sp, fp
+0x16d3412b8    78  a8c17bfd       ldp fp, lr, [sp], #16
+0x16d3412bc    7c  91000470       add x16, x3, #0x1 (1)
+[34m                    [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d3412c0    80  927ffa10       and x16, x16, #0xfffffffffffffffe
+[34m                    ][;m
+[34m                    [  - AssertPositiveOrZero@../../src/codegen/arm64/macro-assembler-arm64.cc:1798[;m
+0x16d3412c4    84  b6f80090       tbz x16, #63, #+0x10 (addr 0x16d3412d4)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  Unexpected negative value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+0x16d3412c8    88  d2800e01       movz x1, #0x70
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+[34m                          [  - EntryFromBuiltinAsOperand@../../src/codegen/arm64/macro-assembler-arm64.cc:2397[;m
+[34m                          ][;m
+0x16d3412cc    8c  f96b2b50       ldr x16, [x26, #22096]
+0x16d3412d0    90  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+0x16d3412d4    94  8b306fff       add sp, sp, x16, lsl #3
+[34m                    [  - AssertSpAligned@../../src/codegen/arm64/macro-assembler-arm64.cc:1610[;m
+0x16d3412d8    98  910003f0       mov x16, sp
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d3412dc    9c  f2400e1f       tst x16, #0xf
+[34m                      ][;m
+0x16d3412e0    a0  540000c0       b.eq #+0x18 (addr 0x16d3412f8)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  The stack pointer is not the expected value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+0x16d3412e4    a4  52800780       movz w0, #0x3c
+0x16d3412e8    a8  d29f4990       movz x16, #0xfa4c
+0x16d3412ec    ac  f2a16270       movk x16, #0xb13, lsl #16
+0x16d3412f0    b0  f2c00030       movk x16, #0x1, lsl #32
+0x16d3412f4    b4  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+0x16d3412f8    b8  d65f03c0       ret
+[34m                  -- B1 start (deferred) (deconstruct frame) --[;m
+[34m                  -- <not inlined:144> --[;m
+0x16d3412fc    bc  d2801202       movz x2, #0x90
+[34m                    [  - AssertSpAligned@../../src/codegen/arm64/macro-assembler-arm64.cc:1610[;m
+0x16d341300    c0  910003f0       mov x16, sp
+[34m                      [  - LogicalMacro@../../src/codegen/arm64/macro-assembler-arm64.cc:199[;m
+0x16d341304    c4  f2400e1f       tst x16, #0xf
+[34m                      ][;m
+0x16d341308    c8  540000c0       b.eq #+0x18 (addr 0x16d341320)
+[34m                      [  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4259[;m
+[34m                  Abort message:  - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4261[;m
+[34m                  The stack pointer is not the expected value - Abort@../../src/codegen/arm64/macro-assembler-arm64.cc:4262[;m
+[34m                        [ Frame: NO_FRAME_TYPE[;m
+0x16d34130c    cc  52800780       movz w0, #0x3c
+0x16d341310    d0  d29f4990       movz x16, #0xfa4c
+0x16d341314    d4  f2a16270       movk x16, #0xb13, lsl #16
+0x16d341318    d8  f2c00030       movk x16, #0x1, lsl #32
+0x16d34131c    dc  d63f0200       blr x16
+[34m                        ][;m
+[34m                      ][;m
+[34m                    ][;m
+0x16d341320    e0  d10043ff       sub sp, sp, #0x10 (16)
+0x16d341324    e4  f90007ff       str xzr, [sp, #8]
+0x16d341328    e8  f90003e2       str x2, [sp]
+0x16d34132c    ec  f9000bfb       str cp, [sp, #16]
+0x16d341330    f0  d2946e01       movz x1, #0xa370
+0x16d341334    f4  f2a17e81       movk x1, #0xbf4, lsl #16
+0x16d341338    f8  f2c00021       movk x1, #0x1, lsl #32
+0x16d34133c    fc  d2800020       movz x0, #0x1
+0x16d341340   100  58000142       ldr x2, pc+40 (addr 0x000000016d341368)    ;; object: 0x1d1600081a85 <NativeContext[301]>
+0x16d341344   104  aa0203fb       mov cp, x2
+[34m                    [ Inlined  Trampoline for call to CEntry_Return1_ArgvOnStack_NoBuiltinExit - CallBuiltin@../../src/codegen/arm64/macro-assembler-arm64.cc:2411[;m
+0x16d341348   108  95eb1436       bl #+0x7ac50d8 (addr 0x174e06420)    ;; near builtin entry
+[34m                    ][;m
+[34m                  -- <not inlined:202> --[;m
+0x16d34134c   10c  580000a0       ldr x0, pc+20 (addr 0x000000016d341360)    ;; object: 0x1d1600099475 <String[13]: "port is: 3000">
+0x16d341350   110  17ffffd8       b #-0xa0 (addr 0x16d3412b0)
+0x16d341354   114  d503201f       nop
+[34m                  [ Constant Pool - EmitAndClear@../../src/codegen/constant-pool.cc:292[;m
+0x16d341358   118  580000bf       constant pool begin (num_const = 5)    ;; constant pool
+0x16d34135c   11c  d63f03e0       constant
+0x16d341360   120  00099475       constant
+0x16d341364   124  00001d16       constant
+0x16d341368   128  00081a85       constant
+0x16d34136c   12c  00001d16       constant
+[34m                  ] - EmitAndClear@../../src/codegen/constant-pool.cc:296[;m
+[34m                    [  - EntryFromBuiltinAsOperand@../../src/codegen/arm64/macro-assembler-arm64.cc:2397[;m
+[34m                    ][;m
+0x16d341370   130  f8558350       ldur x16, [x26, #-168]
+0x16d341374   134  d61f0200       br x16
+[34m                    [  - CallForDeoptimization@../../src/codegen/arm64/macro-assembler-arm64.cc:2673[;m
+0x16d341378   138  97fffffe       bl #-0x8 (addr 0x16d341370)    ;; debug: deopt position, script offset '90'
+                                                             ;; debug: deopt position, inlining id 'ffffffff'
+                                                             ;; debug: deopt reason '(unknown)'
+                                                             ;; debug: deopt index 0
+                                                             ;; debug: deopt node id 11
+                    ]
+                  ;;; Safepoint table. - Emit@../../src/codegen/safepoint-table.cc:187
+                  ]
+
+Source positions:
+ pc offset  position
+        60       144
+        6c       202
+        bc       144
+       10c       202
+
+Inlined functions (count = 1)
+ 0x1d1600099281 <SharedFunctionInfo mc__PORT>
+
+Deoptimization Input Data (deopt points = 1)
+ index  bytecode-offset  node-id    pc
+     0               -1       17   10c 
+
+Safepoints (entries = 1, byte size = 14)
+0x16d34134c    10c  slots (sp->fp): 10000000  deopt      0 trampoline:    138
+
+RelocInfo (size = 2b)
+0x16d34126c  near builtin entry
+0x16d3412ac  full embedded object  (0x1d1600099475 <String[13]: "port is: 3000">)
+0x16d341340  full embedded object  (0x1d1600081a85 <NativeContext[12d]>)
+0x16d341348  near builtin entry
+0x16d341358  constant pool (size 18)
+0x16d341378  deopt script offset  (90)
+0x16d341378  deopt inlining id  (ffffffffffffffff)
+0x16d341378  deopt reason  ((unknown))
+0x16d341378  deopt index
+0x16d341378  deopt node id
+
+--- End code ---
+[completed compiling 0x1d1600099335 <JSFunction mc__main <./examples/fn-inlining/lambda.js> (sfi = 0x1d1600099251)> (target TURBOFAN_JS) - took 0.000, 3.792, 1.083 ms]
+[turbofan] Compiled: 2 functions with 72 byte source size in 6.625000ms.
