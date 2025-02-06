@@ -1,2 +1,1 @@
 gtime -f "Mem: %MKb\nTime: %e" ~/.jsvu/engines/v8-debug/v8-debug --print-code --code-comments --print-opt-code --print-opt-code-filter="mc__*" --print-opt-source --trace-opt --trace-deopt --no-maglev --trace-opt-stats --trace-file-names --trace-elements-transitions --trace-deopt-verbose --trace-opt-verbose --allow-natives-syntax $1
-# gtime -f "Mem: %MKb\nTime: %e" ~/.jsvu/engines/v8-debug/v8-debug --print-opt-code --print-opt-code-filter="mc__*" --print-opt-source --trace-file-names --allow-natives-syntax $1
