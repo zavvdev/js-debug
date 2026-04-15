@@ -1,0 +1,55 @@
+d8> %DebugPrint(clos)
+DebugPrint: 0x3e70104c37d: [JSFunctionWithoutPrototype]
+ - map: 0x03e7010213a9 <Map[28](HOLEY_ELEMENTS)>
+ - properties_or_hash: 0x03e7000007e5 <FixedArray[0]>
+ - elements: 0x03e7000007e5 <FixedArray[0]>
+ - dispatch_handle: 1265152
+ - shared_function_info: 0x03e70103a515 <SharedFunctionInfo>
+ - context: 0x03e70104b3ad <FunctionContext[4]>
+ - feedback_cell: 0x03e70103a561 <FeedbackCell[one closure]>
+0x3e7010213a9: [Map] in OldSpace
+ - map: 0x03e701020d1d <MetaMap (0x03e701020d6d <NativeContext[307]>)>
+ - type: JS_FUNCTION_WITHOUT_PROTOTYPE_TYPE
+ - instance size: 28
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x03e700000011 <undefined>
+ - prototype_validity_cell: 0x03e700000af1 <Cell value= [cleared]>
+ - instance descriptors (own) #2: 0x03e7010214d1 <DescriptorArray[2]>
+ - prototype: 0x03e7010215a1 <JSFunction (sfi = 0x3e70101dea9)>
+ - constructor: 0x03e70102143d <JSFunction Function (sfi = 0x3e7008c9521)>
+ - dependent code: 0x03e7000007f5 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+undefined
+d8> %DebugPrintPtr(0x03e70104b3ad)
+DebugPrint: 0x3e70104b3ad: [Context]
+ - map: 0x03e701030d95 <Map(FUNCTION_CONTEXT_TYPE)>
+ - type: FUNCTION_CONTEXT_TYPE
+ - scope_info: 0x03e70103a4dd <ScopeInfo FUNCTION_SCOPE>
+ - previous: 0x03e701020d6d <NativeContext[307]>
+ - native_context: 0x03e701020d6d <NativeContext[307]>
+ - length: 4
+ - elements:
+           0: 0x03e70103a4dd <ScopeInfo FUNCTION_SCOPE>
+           1: 0x03e701020d6d <NativeContext[307]>
+           2: 0x03e70104b3c5 <JSArray[1000]> <------ Array is captured to outer env if it's used inside returned function
+           3: 1
+0x3e701030d95: [Map] in OldSpace
+ - map: 0x03e701020d1d <MetaMap (0x03e701020d6d <NativeContext[307]>)>
+ - type: FUNCTION_CONTEXT_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - native context: 0x03e701020d6d <NativeContext[307]>
+ - prototype_validity_cell: 0
+ - instance descriptors (own) #0: 0x03e70000080d <DescriptorArray[0]>
+ - prototype: 0x03e70000002d <null>
+ - dependent code: 0x03e7000007f5 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+4290689414061

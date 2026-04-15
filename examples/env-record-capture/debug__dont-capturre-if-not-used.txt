@@ -1,0 +1,55 @@
+d8> %DebugPrint(clos)
+DebugPrint: 0x1b010104c379: [JSFunctionWithoutPrototype]
+ - map: 0x1b01010213a9 <Map[28](HOLEY_ELEMENTS)>
+ - properties_or_hash: 0x1b01000007e5 <FixedArray[0]>
+ - elements: 0x1b01000007e5 <FixedArray[0]>
+ - dispatch_handle: 1265152
+ - shared_function_info: 0x1b010103a50d <SharedFunctionInfo>
+ - context: 0x1b010104b3ad <FunctionContext[3]>
+ - feedback_cell: 0x1b010103a559 <FeedbackCell[one closure]>
+0x1b01010213a9: [Map] in OldSpace
+ - map: 0x1b0101020d1d <MetaMap (0x1b0101020d6d <NativeContext[307]>)>
+ - type: JS_FUNCTION_WITHOUT_PROTOTYPE_TYPE
+ - instance size: 28
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x1b0100000011 <undefined>
+ - prototype_validity_cell: 0x1b0100000af1 <Cell value= [cleared]>
+ - instance descriptors (own) #2: 0x1b01010214d1 <DescriptorArray[2]>
+ - prototype: 0x1b01010215a1 <JSFunction (sfi = 0x1b010101dea9)>
+ - constructor: 0x1b010102143d <JSFunction Function (sfi = 0x1b01008c9521)>
+ - dependent code: 0x1b01000007f5 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+undefined
+d8> %DebugPrintPtr(0x1b010104b3ad)
+DebugPrint: 0x1b010104b3ad: [Context]
+ - map: 0x1b0101030d95 <Map(FUNCTION_CONTEXT_TYPE)>
+ - type: FUNCTION_CONTEXT_TYPE
+ - scope_info: 0x1b010103a4dd <ScopeInfo FUNCTION_SCOPE>
+ - previous: 0x1b0101020d6d <NativeContext[307]>
+ - native_context: 0x1b0101020d6d <NativeContext[307]>
+ - length: 3
+ - elements:
+           0: 0x1b010103a4dd <ScopeInfo FUNCTION_SCOPE>
+           1: 0x1b0101020d6d <NativeContext[307]>
+           2: 1 <--------------- identifier "x"
+                <--------------- array hasn't been captured because it's not used inside the returned function
+0x1b0101030d95: [Map] in OldSpace
+ - map: 0x1b0101020d1d <MetaMap (0x1b0101020d6d <NativeContext[307]>)>
+ - type: FUNCTION_CONTEXT_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - native context: 0x1b0101020d6d <NativeContext[307]>
+ - prototype_validity_cell: 0
+ - instance descriptors (own) #0: 0x1b010000080d <DescriptorArray[0]>
+ - prototype: 0x1b010000002d <null>
+ - dependent code: 0x1b01000007f5 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+29691126002605
